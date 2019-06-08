@@ -13,7 +13,7 @@ public class EnvioBrasil extends Envio{
 
     @Override
     protected float operacion(float volumen, float peso) {
-        return volumen * 0.08f + peso * 0.5f;
+        return volumen * 0.005f + peso * 0.3f + 100;
     }
     
 }

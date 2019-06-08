@@ -13,7 +13,7 @@ public class EnvioChile extends Envio{
 
     @Override
     protected float operacion(float volumen, float peso) {
-        return volumen * 0.04f + peso * 0.2f;
+        return volumen * 0.004f + peso * 0.25f + 90;
     }
     
 }
