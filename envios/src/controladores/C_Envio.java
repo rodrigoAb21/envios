@@ -52,7 +52,8 @@ public class C_Envio implements ActionListener{
         
         // Agregar Paquete
         else if (e.getSource() == vista_envio.btn_agregar) {
-            envio.agregarPaquete(
+            try {
+              envio.agregarPaquete(
                     new Paquete(
                             Integer.parseInt(vista_envio.txt_cod.getText()),
                             vista_envio.txt_desc.getText(),
@@ -65,17 +66,23 @@ public class C_Envio implements ActionListener{
             
             
             vista_envio.actualizarTabla(envio.getPaquetes());
-            vista_envio.label_total.setText(df.format(envio.getCosto()));
+            vista_envio.label_total.setText(df.format(envio.getCosto()));  
+            } catch(Exception er){
+                
+            }
             vista_envio.limpiarDatosPaquete();
             
         }
         
         // Quitar Paquete
         else if (e.getSource() == vista_envio.btn_quitar) {
-            envio.quitarPaquete(Integer.parseInt(vista_envio.txt_cod.getText()));
+            try {
+                envio.quitarPaquete(Integer.parseInt(vista_envio.txt_cod.getText()));
            
             vista_envio.actualizarTabla(envio.getPaquetes());
             vista_envio.label_total.setText(df.format(envio.getCosto()));
+            } catch (Exception er) {
+            }
             vista_envio.limpiarDatosPaquete();
         }
         
